@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Rajdhani:wght@300;600;700&display=swap');
+
+:root {
+  --neon-blue: #00f2ff;
+  --neon-purple: #bc13fe;
+  --bg-black: #050508;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,242,255,0.12), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(188,19,254,0.12), transparent 40%),
+    var(--bg-black);
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND GRID */
+.cyber-grid {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,242,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,242,255,0.05) 1px, transparent 1px);
+  background-size: 90px 90px;
+  animation: gridMove 40s linear infinite;
+  z-index: -1;
+}
+
+/* NAVBAR */
+.cyber-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5,5,8,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Orbitron';
+  font-size: 1.1rem;
+  color: var(--neon-blue);
+}
+
+.logo span {
+  color: var(--neon-purple);
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  margin-left: 26px;
+  font-family: 'Orbitron';
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-links a.active {
+  color: var(--neon-blue);
+}
+
+/* PAGE */
+.journey-page {
+  padding: 120px 6% 80px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+/* TITLES */
+.page-title {
+  font-family: 'Orbitron';
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  letter-spacing: 6px;
+  color: var(--neon-blue);
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 50px;
+}
+
+/* TIMELINE */
+.journey-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+}
+
+.journey-vertical::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--neon-blue), transparent);
+  transform: translateX(-50%);
+  animation: linePulse 3s infinite;
+}
+
+/* CARD */
+.journey-item {
+  position: relative;
+  background: rgba(0,242,255,0.08);
+  border-radius: 14px;
+  padding: 14px 18px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 16px rgba(0,242,255,0.25);
+  width: 90%;
+  margin: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-item:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 28px rgba(0,242,255,0.6);
+}
+
+.journey-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--neon-blue);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px var(--neon-blue);
+}
+
+.year {
+  font-family: 'Orbitron';
+  font-size: 1.1rem;
+  color: var(--neon-purple);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* FINAL */
+.journey-item.highlight {
+  background: linear-gradient(
+    135deg,
+    rgba(0,242,255,0.25),
+    rgba(188,19,254,0.2)
+  );
+  box-shadow: 0 0 40px rgba(188,19,254,0.8);
+  animation: destinationPulse 2.8s infinite;
+}
+
+/* ================= HAMBURGER (ONLY ADDITION) ================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--neon-blue);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(5,5,8,0.95);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 900px 900px; }
+}
+
+@keyframes linePulse {
+  0%,100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes destinationPulse {
+  0%,100% { box-shadow: 0 0 28px rgba(188,19,254,0.6); }
+  50% { box-shadow: 0 0 48px rgba(188,19,254,1); }
+}

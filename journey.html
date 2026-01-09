@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Innovision Journey</title>
+
+  <link rel="stylesheet" href="css/journey.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="cyber-grid"></div>
+
+  <!-- NAVBAR -->
+  <nav class="cyber-nav">
+    <div class="logo">INNOVISION<span>2026</span></div>
+
+    <!-- HAMBURGER (MOBILE ONLY) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="journey.html" class="active">JOURNEY</a>
+      <a href="events.html">EVENTS</a>
+    </div>
+  </nav>
+
+  <!-- JOURNEY PAGE -->
+  <section class="journey-page">
+    <h1 class="page-title" data-aos="zoom-in">OUR JOURNEY</h1>
+    <p class="page-subtitle" data-aos="fade-up">
+      From Campus Innovation to National Impact
+    </p>
+
+    <div class="journey-vertical">
+
+      <div class="journey-item" data-aos="fade-up"><span class="year">2009</span><p>Igniting Technical Curiosity</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2011</span><p>Technology for Society</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2013</span><p>Green Engineering & Sustainability</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2014</span><p>Digital India</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2015</span><p>Make in India</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2016</span><p>Skill India</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2017</span><p>Smart Cities</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2018</span><p>Women Empowerment</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2019</span><p>Rural Innovation</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2020</span><p>AI, IoT & Emerging Tech</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2021</span><p>Healthcare Technology</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2022</span><p>Atmanirbhar Bharat</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2023</span><p>Sustainable Development Goals</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2024</span><p>Industry 4.0</p></div>
+      <div class="journey-item" data-aos="fade-up"><span class="year">2025</span><p>Youth-Led Nation Building</p></div>
+
+      <div class="journey-item highlight" data-aos="zoom-in">
+        <span class="year">2026</span>
+        <p>Technology for Inclusive and Sustainable Growth</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+  </script>
+
+</body>
+</html>
