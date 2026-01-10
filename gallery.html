@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INNOVISION 2026 | Gallery</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="cyber-grid"></div>
+
+  <!-- NAVBAR -->
+  <nav class="cyber-nav">
+    <div class="logo">INNOVISION<span>2026</span></div>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="journey.html">JOURNEY</a>
+      <a href="events.html">EVENTS</a>
+      <a href="gallery.html" class="active">GALLERY</a>
+    </div>
+  </nav>
+
+  <!-- GALLERY -->
+  <section class="content-section gallery-section">
+    <h2 class="section-title" data-aos="fade-up">INNOVISION GALLERY</h2>
+
+    <p class="gallery-subtitle" data-aos="fade-up">
+      Moments that define innovation, collaboration, and excellence
+    </p>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Images injected by JS -->
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    /* ===== GALLERY ARRAY (ADD YOUR IMAGES HERE) ===== */
+    const galleryImages = [
+      "assets/wallpaper.jpg",
+      "assets/wallpaper2.jpg",
+      "assets/innovision.jpeg",
+      "assets/innovisionP.jpeg",
+      "assets/EVORAlogo.jpeg"
+    ];
+
+    const galleryGrid = document.getElementById("galleryGrid");
+
+    galleryImages.forEach((src, index) => {
+      const card = document.createElement("div");
+      card.className = "gallery-card";
+      card.setAttribute("data-aos", "zoom-in");
+      card.setAttribute("data-aos-delay", index * 80);
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Innovision Gallery";
+
+      card.appendChild(img);
+      galleryGrid.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
