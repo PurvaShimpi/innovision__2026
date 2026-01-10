@@ -60,14 +60,16 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(5,5,8,0.85);
+  background: rgba(5,5,8,0.9);
   backdrop-filter: blur(10px);
-  z-index: 100;
+  border-bottom: 1px solid rgba(0,242,255,0.3);
+  z-index: 1000;
 }
 
 .logo {
   font-family: 'Orbitron';
   font-size: 1.1rem;
+  letter-spacing: 2px;
   color: var(--neon-blue);
 }
 
@@ -77,6 +79,34 @@ body::before {
 
 .nav-links {
   display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-family: 'Orbitron';
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--neon-blue);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--neon-blue);
 }
 
 .nav-links a {
@@ -93,7 +123,7 @@ body::before {
 
 /* PAGE */
 .journey-page {
-  padding: 120px 6% 80px;
+  padding: 80px 6% 80px;
   max-width: 600px;
   margin: auto;
   text-align: center;
@@ -116,12 +146,31 @@ body::before {
 
 /* TIMELINE */
 .journey-vertical {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   position: relative;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Central connecting line */
+.journey-vertical::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, 
+    transparent,
+    rgba(0,242,255,0.4) 5%,
+    rgba(0,242,255,0.4) 95%,
+    transparent
+  );
+  transform: translateX(-50%);
+  z-index: 0;
 }
 
 /* CARD */
@@ -132,47 +181,119 @@ body::before {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 24px 28px;
-  border: 1px solid rgba(0,242,255,0.15);
+  border: 1px solid transparent;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
-  transform: translateY(20px);
+  width: 45%;
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
-/* Floating glowing node */
-.journey-item::before {
+.journey-item > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Border trail animation layer */
+.journey-item:not(.highlight)::after {
   content: "";
   position: absolute;
-  left: -15px;
+  inset: -3px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 70%,
+    rgba(188,19,254,0.6) 80%,
+    rgba(188,19,254,1) 85%,
+    rgba(188,19,254,0.6) 90%,
+    transparent 100%
+  );
+  border-radius: 10px;
+  animation: borderRotate 4s linear infinite;
+  z-index: 0;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 3px;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderRotate {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+/* Alternate left/right positioning */
+.journey-item:nth-child(odd) {
+  align-self: flex-start;
+  transform: translateX(-20px);
+}
+
+.journey-item:nth-child(even) {
+  align-self: flex-end;
+  transform: translateX(20px);
+}
+
+/* Central glowing node - using data attribute for non-highlight items */
+.journey-item:not(.highlight)::before {
+  content: "";
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   background: var(--neon-blue);
   border-radius: 50%;
+  border: 2px solid var(--bg-black);
   box-shadow: 
     0 0 12px rgba(0,242,255,0.9),
     0 0 24px rgba(0,242,255,0.5),
     0 0 36px rgba(0,242,255,0.3);
   animation: nodePulse 2s ease-in-out infinite;
-  z-index: 2;
+  z-index: 10;
+  transform: translateY(-50%);
 }
 
-.journey-item::after {
+.journey-item:nth-child(odd):not(.highlight)::before {
+  right: -56px;
+}
+
+.journey-item:nth-child(even):not(.highlight)::before {
+  left: -56px;
+}
+
+.journey-item:nth-child(odd):not(.highlight) .journey-line {
+  right: -50px;
+  background: linear-gradient(to right, 
+    rgba(0,242,255,0.4), 
+    transparent
+  );
+}
+
+.journey-item:nth-child(even):not(.highlight) .journey-line {
+  left: -50px;
+  background: linear-gradient(to left, 
+    rgba(0,242,255,0.4), 
+    transparent
+  );
+}
+
+/* Journey line connector */
+.journey-line {
   content: "";
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, 
-    rgba(188,19,254,0.08), 
-    transparent 70%
-  );
-  border-radius: 10px;
-  z-index: -1;
-  pointer-events: none;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  transform: translateY(-50%);
+  z-index: 5;
 }
 
 .journey-item:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) translateX(0) !important;
   border-color: rgba(0,242,255,0.4);
   box-shadow: 
     0 4px 24px rgba(0,242,255,0.15),
@@ -204,26 +325,17 @@ body::before {
 .journey-item.highlight {
   border-color: rgba(188,19,254,0.3);
   background: rgba(15, 10, 20, 0.4);
-  grid-column: 1 / -1;
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
+  width: 60%;
+  align-self: center !important;
+  transform: translateX(0) !important;
 }
 
 .journey-item.highlight::before {
-  background: var(--neon-purple);
-  box-shadow: 
-    0 0 16px rgba(188,19,254,1),
-    0 0 28px rgba(188,19,254,0.6),
-    0 0 40px rgba(188,19,254,0.4);
-  animation: nodePulsePurple 2s ease-in-out infinite;
+  display: none;
 }
 
 .journey-item.highlight::after {
-  background: radial-gradient(circle at 30% 30%, 
-    rgba(188,19,254,0.15), 
-    transparent 70%
-  );
+  display: none;
 }
 
 .journey-item.highlight:hover {
@@ -231,10 +343,6 @@ body::before {
   box-shadow: 
     0 4px 24px rgba(188,19,254,0.2),
     0 0 0 1px rgba(188,19,254,0.3) inset;
-}
-
-.journey-item.highlight:hover::before {
-  animation: nodePulsePurpleIntense 1s ease-in-out infinite;
 }
 
 .journey-item.highlight .year {
@@ -372,12 +480,29 @@ body::before {
 
 /* RESPONSIVE: Single column on mobile */
 @media (max-width: 768px) {
-  .journey-vertical {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .journey-vertical::before {
+    left: 20px;
+  }
+  
+  .journey-item,
+  .journey-item:nth-child(odd),
+  .journey-item:nth-child(even) {
+    width: 100%;
+    align-self: stretch;
+    padding-left: 50px;
+    transform: translateX(0) !important;
+  }
+  
+  .journey-item::before {
+    left: -6px !important;
+    right: auto !important;
+  }
+  
+  .journey-item::after {
+    display: none;
   }
   
   .journey-item.highlight {
-    grid-column: 1;
+    width: 100%;
   }
 }
