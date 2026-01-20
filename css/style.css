@@ -272,6 +272,49 @@ body {
   animation: badgePulse 3s infinite;
 }
 
+/* ================= HERO BUTTONS ================= */
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+/* BASE BUTTON (ALL) */
+.cyber-btn {
+  position: relative;
+  padding: 12px 18px;
+  font-family: 'Orbitron';
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--neon-blue);
+  background: rgba(0,242,255,0.08);
+  border-radius: 6px;
+  border: 1px solid rgba(0,242,255,0.45);
+  overflow: hidden;
+
+  box-shadow:
+    0 0 10px rgba(0,242,255,0.25),
+    inset 0 0 8px rgba(0,242,255,0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* NORMAL HOVER (ALL BUTTONS) */
+.cyber-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 18px rgba(0,242,255,0.6),
+    inset 0 0 10px rgba(0,242,255,0.25);
+}
+
 /* ================= EXPLORE EVENTS (SPECIAL CTA) ================= */
 /* Add class="cyber-btn explore-cta" in HTML */
 
@@ -331,6 +374,7 @@ body {
   from { left: -120%; }
   to   { left: 120%; }
 }
+
 
 /* CONTENT */
 .content-section {
