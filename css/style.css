@@ -272,30 +272,64 @@ body {
   animation: badgePulse 3s infinite;
 }
 
-/* HERO BUTTONS */
-.hero-btns {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 22px;
+/* ================= EXPLORE EVENTS (SPECIAL CTA) ================= */
+/* Add class="cyber-btn explore-cta" in HTML */
+
+.explore-cta {
+  animation: ctaGlow 3.2s ease-in-out infinite;
 }
 
-.cyber-btn {
-  padding: 12px 18px;
-  font-family: 'Orbitron';
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: var(--neon-blue);
-  background: rgba(0,242,255,0.08);
-  border-radius: 6px;
-  transition: transform 0.25s, box-shadow 0.25s;
+/* Light sweep overlay */
+.explore-cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(188,19,254,0.35),
+    transparent
+  );
 }
 
-.cyber-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0,242,255,0.6);
+/* Strong hover for Explore */
+.explore-cta:hover {
+  background: rgba(188,19,254,0.12);
+  border-color: rgba(188,19,254,0.75);
+
+  box-shadow:
+    0 0 26px rgba(188,19,254,0.85),
+    inset 0 0 14px rgba(188,19,254,0.3);
+
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Trigger sweep */
+.explore-cta:hover::after {
+  animation: ctaSweep 0.9s ease;
+}
+
+/* ================= CTA ANIMATIONS ================= */
+
+@keyframes ctaGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 12px rgba(0,242,255,0.35),
+      inset 0 0 8px rgba(0,242,255,0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 22px rgba(188,19,254,0.65),
+      inset 0 0 12px rgba(188,19,254,0.25);
+  }
+}
+
+@keyframes ctaSweep {
+  from { left: -120%; }
+  to   { left: 120%; }
 }
 
 /* CONTENT */
