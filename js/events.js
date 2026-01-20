@@ -60,7 +60,7 @@ const events = [
     coord: "Ravi Shankar Rai · 8948271201",
     register: "https://www.atincampus.co.in/event-list",
     rulebook:"#",
-    poster: "assets/eventsImages/automationAscension.png"
+    poster: "assets/eventsImages/automationascension.png"
   },
   {
     name: "TECHNOXPLOSION",
@@ -105,7 +105,7 @@ const events = [
     coord: "Mayuri More · 9970897952",
     register: "https://www.atincampus.co.in/event-list",
     rulebook:"#",
-    poster: "assets/eventsImages/tantraUtsav.jpeg"
+    poster: "assets/eventsImages/tantrautsav.jpeg"
   },
   {
     name: "LIBCAST CHALLENGE",
@@ -276,3 +276,4 @@ document.addEventListener("keydown", (e) => {
 });
 
 render();
+
