@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;600&display=swap');
+@media (max-width:768px){
+  .event-card::before {
+    animation-duration: 14s;
+  }
+}
 
 /* ================= ROOT ================= */
 :root {
@@ -145,6 +150,54 @@ body {
   transition: .3s;
 }
 .event-card:hover { transform: translateY(-6px); }
+
+/* ================= ANIMATED BORDER (PURPLE, BOLDER, SMOOTH) ================= */
+
+.event-card {
+  position: relative;
+  overflow: visible;
+}
+
+.event-card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;                  /* 🔹 bolder than before */
+  border-radius: 18px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 70%,
+    rgba(188,19,254,0.45) 80%,   /* 💜 stronger purple */
+    rgba(188,19,254,0.9) 87%,    /* 💜 bright highlight */
+    rgba(188,19,254,0.45) 94%,
+    transparent 100%
+  );
+  z-index: -1;
+
+  mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+
+  padding: 3px;                 /* 🔹 bolder glow ring */
+  animation: borderRotate 10s linear infinite;
+}
+
+/* Rotation variable */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderRotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+
 
 /* ================= POSTER ================= */
 .poster {
