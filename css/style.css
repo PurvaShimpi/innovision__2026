@@ -272,107 +272,69 @@ body {
   animation: badgePulse 3s infinite;
 }
 
-/* ================= HERO BUTTONS ================= */
-
-.hero-btns {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 22px;
-}
-
-/* BASE BUTTON (ALL) */
-.cyber-btn {
+.btn-unicorn {
   position: relative;
-  padding: 12px 18px;
-  font-family: 'Orbitron';
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: var(--neon-blue);
-  background: rgba(0,242,255,0.08);
-  border-radius: 6px;
-  border: 1px solid rgba(0,242,255,0.45);
+  padding: 14px 34px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: #00fff7;
+  background: rgba(0, 255, 247, 0.08);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 255, 247, 0.35);
+  cursor: pointer;
   overflow: hidden;
-
-  box-shadow:
-    0 0 10px rgba(0,242,255,0.25),
-    inset 0 0 8px rgba(0,242,255,0.15);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(6px);
 }
 
-/* NORMAL HOVER (ALL BUTTONS) */
-.cyber-btn:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 0 18px rgba(0,242,255,0.6),
-    inset 0 0 10px rgba(0,242,255,0.25);
-}
-
-/* ================= EXPLORE EVENTS (SPECIAL CTA) ================= */
-/* Add class="cyber-btn explore-cta" in HTML */
-
-.explore-cta {
-  animation: ctaGlow 3.2s ease-in-out infinite;
-}
-
-/* Light sweep overlay */
-.explore-cta::after {
+/* Unicorn Gradient Border */
+.btn-unicorn::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -120%;
-  width: 120%;
-  height: 100%;
+  inset: -2px;
   background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(188,19,254,0.35),
-    transparent
+    120deg,
+    #00fff7,
+    #8f00ff,
+    #ff00c8,
+    #00fff7
   );
+  background-size: 300% 300%;
+  animation: unicornFlow 6s linear infinite;
+  border-radius: 16px;
+  z-index: -1;
 }
 
-/* Strong hover for Explore */
-.explore-cta:hover {
-  background: rgba(188,19,254,0.12);
-  border-color: rgba(188,19,254,0.75);
+/* Inner Dark Layer */
+.btn-unicorn::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(0, 255, 247, 0.15),
+    rgba(0, 0, 0, 0.9)
+  );
+  border-radius: 12px;
+  z-index: -1;
+}
 
+/* Hover Effect */
+.btn-unicorn:hover {
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.03);
   box-shadow:
-    0 0 26px rgba(188,19,254,0.85),
-    inset 0 0 14px rgba(188,19,254,0.3);
-
-  transform: translateY(-3px) scale(1.03);
+    0 0 20px rgba(0, 255, 247, 0.7),
+    0 0 40px rgba(143, 0, 255, 0.6),
+    0 0 60px rgba(255, 0, 200, 0.4);
 }
 
-/* Trigger sweep */
-.explore-cta:hover::after {
-  animation: ctaSweep 0.9s ease;
-}
-
-/* ================= CTA ANIMATIONS ================= */
-
-@keyframes ctaGlow {
-  0%, 100% {
-    box-shadow:
-      0 0 12px rgba(0,242,255,0.35),
-      inset 0 0 8px rgba(0,242,255,0.15);
-  }
-  50% {
-    box-shadow:
-      0 0 22px rgba(188,19,254,0.65),
-      inset 0 0 12px rgba(188,19,254,0.25);
-  }
-}
-
-@keyframes ctaSweep {
-  from { left: -120%; }
-  to   { left: 120%; }
+/* Glow Pulse Animation */
+@keyframes unicornFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 
