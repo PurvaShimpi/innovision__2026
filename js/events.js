@@ -18,7 +18,7 @@ const events = [
     poster: "assets/eventsImages/avinya.jpeg"
   },
   {
-    name: "PRAKALPA",
+    name: "PRAKALP",
     inst: "RSCOE",
     desc: "IT innovation challenge.",
     coord: "Pallavi Tekade · 8483934912",
