@@ -9,11 +9,11 @@ hamburger.onclick = () => navLinks.classList.toggle("open");
 
 const events = [
   {
-    name: "AVINYA-2026",
+    name: "AVINYA-4.0",
     inst: "RSCOE",
     desc: "Coding, AI & system design.",
     coord: "Swati Paralkar · 9309513956",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/avinya-4-0-cs-dept",
     rulebook: "https://drive.google.com/file/d/1evJy_VAnULUf1hZCYH3P6qKRYhbAky9X/view",
     poster: "assets/eventsImages/avinya.jpeg"
   },
@@ -23,7 +23,7 @@ const events = [
     desc: "IT innovation challenge.",
     coord: "Pallavi Tekade · 8483934912",
     rulebook:"#",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/prakalp-2026-it-dept",
     poster: "assets/eventsImages/prakalpa.jpeg"
   },
   {
@@ -31,7 +31,7 @@ const events = [
     inst: "RSCOE",
     desc: "Techno-business & analytics competition.",
     coord: "Neeraj Sathawane · 9595497402",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/abhyudaya-csbs-dept",
     rulebook:"#",
     poster: "assets/eventsImages/abhyudaya.jpeg"
   },
@@ -40,7 +40,7 @@ const events = [
     inst: "RSCOE",
     desc: "Electronics & IoT based challenges.",
     coord: "Ajit Tatugade · 8087274140",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/electronova-entc-dept",
     rulebook:"#",
     poster: "assets/eventsImages/electronova.jpeg"
   },
@@ -49,7 +49,7 @@ const events = [
     inst: "RSCOE",
     desc: "Route following robotic car competition.",
     coord: "Amruta Uduparkar · 8788799157",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/catrack-2k26-electrical-dept",
     rulebook:"#",
     poster: "assets/eventsImages/catrack.png"
   },
@@ -58,7 +58,7 @@ const events = [
     inst: "RSCOE",
     desc: "Automation & robotics innovation event.",
     coord: "Ravi Shankar Rai · 8948271201",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/automation-ascention-3-0-a-r-dept",
     rulebook:"#",
     poster: "assets/eventsImages/automationascension.png"
   },
@@ -72,11 +72,11 @@ const events = [
     poster: "assets/coming_soon.webp"
   },
   {
-    name: "IDEATHON-2026",
+    name: "IDEATHON",
     inst: "RSCOE",
     desc: "Mechanical ideation & innovation.",
     coord: "R. P. Sonawane · 9503305104",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/ideathon-2k26-mech-dept",
     rulebook:"#",
     poster: "assets/coming_soon.webp"
   },
@@ -85,7 +85,7 @@ const events = [
     inst: "RSCOE",
     desc: "National-level sustainable concrete design competition.",
     coord: "Ramatai Pawar · 9307475018",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/sustainacast-2026-civil-dept",
     rulebook:"#",
     poster: "assets/eventsImages/sustainacast.jpeg"
   },
@@ -94,7 +94,7 @@ const events = [
     inst: "RSCOE",
     desc: "Startup pitching & business innovation.",
     coord: "Pramila Parekh · 9890112348",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/shark-tank-mba-dept-1",
     rulebook:"#",
     poster: "assets/coming_soon.webp"
   },
@@ -103,16 +103,16 @@ const events = [
     inst: "Polytechnic",
     desc: "National level polytechnic technical event.",
     coord: "Mayuri More · 9970897952",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/tantra-utsav-2k26-polytechnic-dept",
     rulebook:"#",
     poster: "assets/eventsImages/tantrautsav.jpeg"
   },
   {
     name: "LIBCAST CHALLENGE",
-    inst: "Other",
+    inst: "RSCOE",
     desc: "Reels & content creation competition by library.",
     coord: "Library Team",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/libcaste-challenge-jayawant-library",
     rulebook:"#",
     poster: "assets/eventsImages/libcast.jpeg"
   },
@@ -148,9 +148,45 @@ const events = [
     inst: "RSCOE",
     desc: "National-level problem solving contest.",
     coord: "Suraj Gangawane · 9130290541",
-    register: "https://www.atincampus.co.in/event-list",
+    register: "https://www.atincampus.co.in/event-details/technomanthan-2k26-ca-dept",
     rulebook:"#",
     poster: "assets/eventsImages/technomanthan.png"
+  },
+  {
+    name: "STREET PLAY",
+    inst: "Other",
+    desc: "Got a message for society? Bring it to the streets!",
+    coord: "",
+    register: "https://www.atincampus.co.in/event-details/the-street-paly-show-sadak-se-samwad-mba-jims",
+    rulebook:"#",
+    poster: "assets/coming_soon.webp"
+  },
+  {
+    name: "MONOPOLY",
+    inst: "Other",
+    desc: "♟💼 Monopoly",
+    coord: "Kimya Chatuphale · 8767573149",
+    register: "https://www.atincampus.co.in/event-details/monopoly-mba-jims",
+    rulebook:"#",
+    poster: "assets/coming_soon.webp"
+  },
+  {
+    name: "The Ad Mad Show",
+    inst: "Other",
+    desc: " The Ad Mad Show",
+    coord: "Gayatri Gawali · 9405565069",
+    register: "https://www.atincampus.co.in/event-details/the-ad-mad-show-mba-jims",
+    rulebook:"#",
+    poster: "assets/coming_soon.webp"
+  },
+  {
+    name: "Escape the Room",
+    inst: "RSCOE",
+    desc: " Escape the Room",
+    coord: "Sahil Mishra · 84699 40811",
+    register: "https://www.atincampus.co.in/event-details/escape-the-room-secrets-inside-escape-awaits-mca-bca-dept",
+    rulebook:"#",
+    poster: "assets/coming_soon.webp"
   }
 ];
 
