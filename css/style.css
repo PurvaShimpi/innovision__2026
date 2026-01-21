@@ -816,3 +816,182 @@ footer {
     transform: translateX(100%) rotate(0deg);
   }
 }
+/* Container for the Quick Links */
+.hero-action-container {
+  margin-top: 35px;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.quick-link-title {
+  color: #00f2ff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+/* Flexbox Grid */
+.action-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px;
+}
+
+/* Individual Button Style */
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(0, 242, 255, 0.05);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  min-width: 160px;
+}
+
+.action-item i {
+  font-size: 1.1rem;
+  color: #00f2ff;
+}
+
+.action-item span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Hover States */
+.action-item:hover {
+  background: rgba(0, 242, 255, 0.2);
+  transform: translateY(-3px);
+  border-color: #00f2ff;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+/* Highlighted 'All Events' Button */
+.action-item.highlight {
+  border-color: #ff00ff; /* Neon Pink/Purple */
+  background: rgba(255, 0, 255, 0.05);
+}
+
+.action-item.highlight i {
+  color: #ff00ff;
+}
+
+.action-item.highlight:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+/* Responsive: 2 buttons per row on small screens */
+@media (max-width: 600px) {
+  .action-item {
+    flex: 1 1 45%;
+    padding: 10px;
+    min-width: 140px;
+  }
+}
+
+/* Container Box */
+.hero-event-dashboard {
+  margin: 40px auto;
+  max-width: 900px;
+  background: rgba(0, 10, 20, 0.7);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  padding: 20px;
+  backdrop-filter: blur(15px);
+  position: relative;
+  clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%); /* Cut corners look */
+}
+
+/* Header with blinker */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.status-text, .terminal-id {
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: #00f2ff;
+  letter-spacing: 1px;
+}
+
+.blink-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #ff0000;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: pulse 1s infinite alternate;
+}
+
+/* The Grid */
+.event-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Terminal Button Design */
+.event-terminal {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.event-code {
+  font-size: 0.6rem;
+  color: rgba(0, 242, 255, 0.5);
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.event-name {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Interaction */
+.event-terminal:hover {
+  background: rgba(0, 242, 255, 0.1);
+  border-color: #00f2ff;
+  transform: scale(1.02);
+}
+
+/* Special Colors */
+.highlight-gold { border-left: 3px solid #ffd700; }
+.highlight-cyan { border-left: 3px solid #00f2ff; }
+
+/* Mobile View: 2 columns */
+@media (max-width: 768px) {
+  .event-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@keyframes pulse {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0.4; transform: scale(1.2); }
+}
