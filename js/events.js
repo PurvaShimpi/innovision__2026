@@ -22,7 +22,7 @@ const events = [
     inst: "RSCOE",
     desc: "IT innovation challenge.",
     coord: "Pallavi Tekade · 8483934912",
-    rulebook:"#",
+    rulebook:"https://drive.google.com/file/d/16_YHJEMvTrTDIpBr_wi64XFPP8-D7Je8/view?usp=drive_link",
     register: "https://www.atincampus.co.in/event-details/prakalp-2026-it-dept",
     poster: "assets/eventsImages/prakalpa.jpeg"
   },
@@ -30,7 +30,7 @@ const events = [
     name: "ABHYUDAYA",
     inst: "RSCOE",
     desc: "Techno-business & analytics competition.",
-    coord: "Neeraj Sathawane · 9595497402",
+    coord: " Bhavesh Patil · 9284918599",
     register: "https://www.atincampus.co.in/event-details/abhyudaya-csbs-dept",
     rulebook:"#",
     poster: "assets/eventsImages/abhyudaya.jpeg"
@@ -41,7 +41,7 @@ const events = [
     desc: "Electronics & IoT based challenges.",
     coord: "Ajit Tatugade · 8087274140",
     register: "https://www.atincampus.co.in/event-details/electronova-entc-dept",
-    rulebook:"#",
+    rulebook:"https://drive.google.com/file/d/1WUJgBxKm40oMbRZHGDBhlivPrQo2kT1y/view?usp=drive_link",
     poster: "assets/eventsImages/electronova.jpeg"
   },
   {
@@ -59,26 +59,35 @@ const events = [
     desc: "Automation & robotics innovation event.",
     coord: "Ravi Shankar Rai · 8948271201",
     register: "https://www.atincampus.co.in/event-details/automation-ascention-3-0-a-r-dept",
-    rulebook:"#",
+    rulebook:"https://drive.google.com/file/d/1ypV6O1Gpx9pFWf6UDcQJWnOM6i0fQNQC/view?usp=drive_link",
     poster: "assets/eventsImages/automationascension.png"
   },
   {
-    name: "TECHNOXPLOSION",
+    name: "TECHNOXPLOSION [CYBERHEIST]",
     inst: "RSCOE",
     desc: "Interdisciplinary engineering challenges.",
-    coord: "Amol Patil · 9673971723",
-    register: "https://www.atincampus.co.in/event-list",
-    rulebook:"#",
-    poster: "assets/coming_soon.webp"
+    coord: "Rahul Hadole · 9011095044",
+    register: "https://www.atincampus.co.in/event-details/technoxplosion-engineering-sciences-and-humanities-dept",
+    rulebook:"https://docs.google.com/document/d/1a85Xl0ySprX9DAYOfBrxKK9y9z-av_Oq/edit?usp=drive_link&ouid=103880505456889555695&rtpof=true&sd=true",
+    poster: "assets/eventsImages/cyberheist.jpeg"
   },
   {
-    name: "IDEATHON",
+    name: "MONOPOLY",
+    inst: "Other",
+    desc: "♟💼 Monopoly",
+    coord: "Kimya Chatuphale · 8767573149",
+    register: "https://www.atincampus.co.in/event-details/monopoly-mba-jims",
+    rulebook:"#",
+    poster: "assets/eventsImages/technothon.jpeg"
+  },
+  {
+    name: "IDEATHON [MECH.]",
     inst: "RSCOE",
     desc: "Mechanical ideation & innovation.",
     coord: "R. P. Sonawane · 9503305104",
     register: "https://www.atincampus.co.in/event-details/ideathon-2k26-mech-dept",
     rulebook:"#",
-    poster: "assets/coming_soon.webp"
+    poster: "assets/eventsImages/ideathon.jpeg"
   },
   {
     name: "SUSTAINACAST",
@@ -86,7 +95,7 @@ const events = [
     desc: "National-level sustainable concrete design competition.",
     coord: "Ramatai Pawar · 9307475018",
     register: "https://www.atincampus.co.in/event-details/sustainacast-2026-civil-dept",
-    rulebook:"#",
+    rulebook:"https://drive.google.com/file/d/1srLvDX1dg1tfOuubur8wrtJIF1sjlrmh/view?usp=drive_link",
     poster: "assets/eventsImages/sustainacast.jpeg"
   },
   {
@@ -96,7 +105,16 @@ const events = [
     coord: "Pramila Parekh · 9890112348",
     register: "https://www.atincampus.co.in/event-details/shark-tank-mba-dept-1",
     rulebook:"#",
-    poster: "assets/coming_soon.webp"
+    poster: "assets/eventsImages/sharktank.jpeg"
+  },
+  {
+    name: "The Ad Mad Show",
+    inst: "Other",
+    desc: " The Ad Mad Show",
+    coord: "Gayatri Gawali · 9405565069",
+    register: "https://www.atincampus.co.in/event-details/the-ad-mad-show-mba-jims",
+    rulebook:"#",
+    poster: "assets/eventsImages/technothon.jpeg"
   },
   {
     name: "TANTRA-UTSAV",
@@ -117,33 +135,6 @@ const events = [
     poster: "assets/eventsImages/libcast.jpeg"
   },
   {
-    name: "PHARMACY IDEATHON",
-    inst: "Other",
-    desc: "Healthcare & pharma innovation ideathon.",
-    coord: "Trupti Deshpande · 7709184076",
-    register: "https://www.atincampus.co.in/event-list",
-    rulebook:"#",
-    poster: "assets/coming_soon.webp"
-  },
-  {
-    name: "DIGITAL TEACHING SKILL",
-    inst: "Other",
-    desc: "Teaching skill development competition.",
-    coord: "RSCOED Faculty",
-    register: "https://www.atincampus.co.in/event-list",
-    rulebook:"#",
-    poster: "assets/coming_soon.webp"
-  },
-  {
-    name: "TECHNOTHON",
-    inst: "Other",
-    desc: "Tech marathon & multi-event challenge.",
-    coord: "Rasika Patil · 9890906515",
-    register: "https://www.atincampus.co.in/event-list",
-    rulebook:"#",
-    poster: "assets/eventsImages/technothon.jpeg"
-  },
-  {
     name: "TECHNOMANTHAN",
     inst: "RSCOE",
     desc: "National-level problem solving contest.",
@@ -159,25 +150,7 @@ const events = [
     coord: "",
     register: "https://www.atincampus.co.in/event-details/the-street-paly-show-sadak-se-samwad-mba-jims",
     rulebook:"#",
-    poster: "assets/coming_soon.webp"
-  },
-  {
-    name: "MONOPOLY",
-    inst: "Other",
-    desc: "♟💼 Monopoly",
-    coord: "Kimya Chatuphale · 8767573149",
-    register: "https://www.atincampus.co.in/event-details/monopoly-mba-jims",
-    rulebook:"#",
-    poster: "assets/coming_soon.webp"
-  },
-  {
-    name: "The Ad Mad Show",
-    inst: "Other",
-    desc: " The Ad Mad Show",
-    coord: "Gayatri Gawali · 9405565069",
-    register: "https://www.atincampus.co.in/event-details/the-ad-mad-show-mba-jims",
-    rulebook:"#",
-    poster: "assets/coming_soon.webp"
+    poster: "assets/eventsImages/technothon.jpeg"
   },
   {
     name: "Escape the Room",
@@ -186,7 +159,7 @@ const events = [
     coord: "Sahil Mishra · 84699 40811",
     register: "https://www.atincampus.co.in/event-details/escape-the-room-secrets-inside-escape-awaits-mca-bca-dept",
     rulebook:"#",
-    poster: "assets/coming_soon.webp"
+    poster: "assets/eventsImages/technothon.jpeg"
   }
 ];
 
